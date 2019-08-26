@@ -1,0 +1,57 @@
+{
+  "name": "{{{project.name}}}",
+  "scripts": {
+    "clean": "rm -rf ./dist/*",
+    "prebuild": "npm run clean",
+    "build": "NODE_ENV=production webpack",
+    "prewatch": "npm run clean",
+    "watch": "webpack -w",
+    "prestart": "NODE_ENV=production npm run build",
+    "start": "NODE_ENV=production node dist/bundle.js",
+    "ci": "git-cz",
+    "ca": "git add -A && git-cz -av",
+    "release": "standard-version",
+    "release:first": "standard-version --first-release"
+  },
+  "engines": {
+    "node": ">=10.13.0"
+  },
+  "devDependencies": {
+    "@commitlint/cli": "^8.0.0",
+    "@commitlint/config-conventional": "^8.0.0",
+    "@types/koa": "^2.0.47",
+    "@types/node": "^10.14.12",
+    "commitizen": "^4.0.3",
+    "copy-webpack-plugin": "^5.0.4",
+    "css-loader": "^3.1.0",
+    "cz-conventional-changelog": "^3.0.2",
+    "husky": "^3.0.1",
+    "koa-webpack": "^5.2.1",
+    "memory-fs": "^0.4.1",
+    "mini-css-extract-plugin": "^0.8.0",
+    "nodemon": "^1.19.1",
+    "standard-version": "^6.0.1",
+    "webpack": "^4.28.4",
+    "webpack-cli": "^3.0.3",
+    "webpack-node-externals": "^1.7.2",
+    "webpack-shell-plugin": "^0.5.0"
+  },
+  "dependencies": {
+    "@types/fs-extra": "^8.0.0",
+    "@types/ramda": "^0.26.18",
+    "@typescript-eslint/eslint-plugin": "^1.13.0",
+    "@typescript-eslint/parser": "^1.13.0",
+    "eslint": "^6.1.0",
+    "fs-extra": "^8.1.0",
+    "js-yaml": "^3.13.1",
+    "koa": "^2.7.0",
+    "koa-csp": "^1.1.0",
+    "koa-logger": "^3.2.0",
+    "koa-mount": "^4.0.0",
+    "koa-router": "^7.4.0",
+    "koa-static": "^5.0.0",
+    "log4js": "^4.4.0",
+    "ramda": "^0.26.1",
+    "typeorm": "^0.2.17"
+  }
+}
